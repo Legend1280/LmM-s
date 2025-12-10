@@ -1,0 +1,45 @@
+models:
+  # Small Model - Fast and efficient
+  llama-7b:
+    display_name: "Llama 7B Instruct"
+    description: "Fast, efficient 7B parameter model for general tasks"
+    backend_type: "openai_compatible"
+    base_url: "${LLAMA_API_URL}"
+    model_name: "llama-7b-instruct"
+    max_tokens: 2048
+    tier: "small"
+    default_temperature: 0.7
+    default_top_p: 0.9
+    supports_streaming: true
+  
+  # Medium Model - Balanced performance
+  gpt-4-mini:
+    display_name: "GPT-4 Mini"
+    description: "Balanced model with good reasoning and efficiency"
+    backend_type: "openai"
+    base_url: "https://api.openai.com/v1"
+    model_name: "gpt-4.1-mini"
+    max_tokens: 4096
+    tier: "medium"
+    default_temperature: 0.7
+    default_top_p: 0.95
+    supports_streaming: true
+  
+  # Large Model - Advanced reasoning
+  gemini-flash:
+    display_name: "Gemini 2.5 Flash"
+    description: "Advanced model with strong reasoning capabilities"
+    backend_type: "openai_compatible"
+    base_url: "${GEMINI_API_URL}"
+    model_name: "gemini-2.5-flash"
+    max_tokens: 8192
+    tier: "large"
+    default_temperature: 0.7
+    default_top_p: 0.95
+    supports_streaming: true
+
+# Default settings
+defaults:
+  timeout: 60
+  max_retries: 3
+  retry_delay: 1.0
